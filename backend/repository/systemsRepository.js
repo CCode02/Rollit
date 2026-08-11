@@ -5,6 +5,11 @@ const getAllSystems = () => {
     return System.find({})
 }
 
+const getSystemById = (id) => {
+    return System.findById(id)
+}
+
 export default {
-    getAllSystems
+    getAllSystems,
+    getSystemById
 }

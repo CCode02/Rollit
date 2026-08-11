@@ -9,4 +9,10 @@ systemsRouter.get('/', (request, response) => {
     })
 })
 
+systemsRouter.get('/:id', (request, response) => {
+    systemsRepository.getSystemById(request.params.id).then((system) => {
+        response.json(system)
+    })
+})
+
 export default systemsRouter
