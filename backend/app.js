@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 import middleware from './utils/middleware.js'
 import logger from './utils/logger.js'
 import config from './utils/config.js'
-import gamesRouter from "./controllers/games.js";
-import systemsRouter from "./controllers/systems.js";
+import gamesRouter from "./controllers/games.js"
+import systemsRouter from "./controllers/systems.js"
 
 const app = express()
 
