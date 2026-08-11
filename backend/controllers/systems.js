@@ -15,4 +15,10 @@ systemsRouter.get('/:id', (request, response) => {
     })
 })
 
+systemsRouter.post('/', (request, response) => {
+    systemsRepository.createSystem(request.body).then((savedSystem) => {
+        response.status(201).json(savedSystem)
+    })
+})
+
 export default systemsRouter

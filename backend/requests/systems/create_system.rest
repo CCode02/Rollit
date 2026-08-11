@@ -1,0 +1,7 @@
+POST http://localhost:3003/api/systems
+Content-Type: application/json
+
+{
+    "name" : "Fate",
+    "description" : "Fate es un juego de rol basado en Fudge (sistema de juego de rol). No tiene ningún género o estética definida y es completamente personalizable. Está diseñado para limitar las obstrucciones a la interpretación de roles mediante la reducción de las tiradas de dados."
+}

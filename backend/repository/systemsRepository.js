@@ -9,7 +9,14 @@ const getSystemById = (id) => {
     return System.findById(id)
 }
 
+const createSystem = (newSystem) => {
+    const system = new System(newSystem)
+
+    return system.save()
+}
+
 export default {
     getAllSystems,
-    getSystemById
+    getSystemById,
+    createSystem
 }
