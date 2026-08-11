@@ -4,6 +4,7 @@ import middleware from './utils/middleware.js'
 import logger from './utils/logger.js'
 import config from './utils/config.js'
 import gamesRouter from "./controllers/games.js";
+import systemsRouter from "./controllers/systems.js";
 
 const app = express()
 
@@ -26,6 +27,7 @@ app.get('/', async (request, response) => {
 })
 
 app.use('/api/games', gamesRouter)
+app.use('/api/systems', systemsRouter)
 
 app.use(middleware.unknownEndpoint)
 
