@@ -19,9 +19,14 @@ const deleteSystem = (id) => {
     return System.findByIdAndDelete(id)
 }
 
+const updateSystem = (id, system) => {
+    return System.findByIdAndUpdate(id, system, { returnDocument: 'after' })
+}
+
 export default {
     getAllSystems,
     getSystemById,
     createSystem,
-    deleteSystem
+    deleteSystem,
+    updateSystem
 }

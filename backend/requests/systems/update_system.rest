@@ -1,0 +1,7 @@
+PUT http://localhost:3003/api/systems/6a7b8b42f5b8de71304a586f
+Content-Type: application/json
+
+{
+    "name" : "Dungeons & Dragons",
+    "description" : "Dungeons & Dragons es un juego de rol de fantasía heroica actualmente publicado por Wizards of the Coast. El juego original fue diseñado en Estados Unidos por Gary Gygax y Dave Arneson y publicado por primera vez en 1974 por la compañía de Gygax, Tactical Studies Rules (TSR)."
+}
