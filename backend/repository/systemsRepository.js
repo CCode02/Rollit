@@ -15,8 +15,13 @@ const createSystem = (newSystem) => {
     return system.save()
 }
 
+const deleteSystem = (id) => {
+    return System.findByIdAndDelete(id)
+}
+
 export default {
     getAllSystems,
     getSystemById,
-    createSystem
+    createSystem,
+    deleteSystem
 }

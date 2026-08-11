@@ -21,4 +21,10 @@ systemsRouter.post('/', (request, response) => {
     })
 })
 
+systemsRouter.delete('/:id', (request, response) => {
+    systemsRepository.deleteSystem(request.params.id).then(() => {
+        response.status(204).end()
+    })
+})
+
 export default systemsRouter
