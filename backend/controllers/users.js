@@ -21,4 +21,10 @@ usersRouter.post('/', (request, response) => {
     })
 })
 
+usersRouter.delete('/:id', (request, response) => {
+    usersRepository.deleteUser(request.params.id).then(() => {
+        response.status(204).end()
+    })
+})
+
 export default usersRouter

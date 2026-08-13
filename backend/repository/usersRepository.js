@@ -26,8 +26,13 @@ const createUser = async (newUser) => {
     return user.save()
 }
 
+const deleteUser = (id) => {
+    return User.findByIdAndDelete(id)
+}
+
 export default {
     getAllUsers,
     getUserById,
-    createUser
+    createUser,
+    deleteUser
 }
