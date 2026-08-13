@@ -27,4 +27,10 @@ usersRouter.delete('/:id', (request, response) => {
     })
 })
 
+usersRouter.put('/:id', (request, reponse) => {
+    usersRepository.updateUser(request.params.id, request.body).then((updatedUser) => {
+        reponse.json(updatedUser)
+    })
+})
+
 export default usersRouter

@@ -22,7 +22,7 @@ const createUser = async (newUser) => {
         gamesDM: [],
         gamesPlayer: []
     })
-    
+
     return user.save()
 }
 
@@ -30,9 +30,15 @@ const deleteUser = (id) => {
     return User.findByIdAndDelete(id)
 }
 
+const updateUser = (id, user) => {
+    console.log('user:', user)
+    return User.findByIdAndUpdate(id, user, { returnDocument: 'after' })
+}
+
 export default {
     getAllUsers,
     getUserById,
     createUser,
-    deleteUser
+    deleteUser,
+    updateUser
 }

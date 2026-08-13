@@ -1,0 +1,11 @@
+PUT http://localhost:3003/api/users/6a7e153826213e3b9d1e9fe2
+Content-Type: application/json
+
+{
+    "username":"Elmovimil",
+    "name" : "Miguel",
+    "gamesDM": ["6a74eba9820ef01f796c05b3"],
+    "gamesPlayer": ["6a74f0e480fbfc20b1609625"]
+}
+//El update solo actua en las propiedades que
+//aparecen en el cuerpo de la petición
