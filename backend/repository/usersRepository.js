@@ -9,6 +9,10 @@ const getUserById = (id) => {
     return User.findById(id)
 }
 
+const getUserByUsername = (username) => {
+    return User.findOne({ username })
+}
+
 const createUser = async (newUser) => {
     const { username, name, password } = newUser
 
@@ -38,6 +42,7 @@ const updateUser = (id, user) => {
 export default {
     getAllUsers,
     getUserById,
+    getUserByUsername,
     createUser,
     deleteUser,
     updateUser
