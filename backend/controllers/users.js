@@ -9,4 +9,10 @@ usersRouter.get('/', (request, response) => {
     })
 })
 
+usersRouter.get('/:id', (request, response) => {
+    usersRepository.getUserById(request.params.id).then((user) => {
+        response.json(user)
+    })
+})
+
 export default usersRouter

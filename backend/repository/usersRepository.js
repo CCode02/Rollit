@@ -5,6 +5,11 @@ const getAllUsers = () => {
     return User.find({})
 }
 
+const getUserById = (id) => {
+    return User.findById(id)
+}
+
 export default {
-    getAllUsers
+    getAllUsers,
+    getUserById
 }
