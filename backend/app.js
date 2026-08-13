@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import middleware from './utils/middleware.js'
 import logger from './utils/logger.js'
 import config from './utils/config.js'
+import loginRouter from "./controllers/login.js"
 import gamesRouter from "./controllers/games.js"
 import systemsRouter from "./controllers/systems.js"
 import usersRouter from "./controllers/users.js"
@@ -27,6 +28,7 @@ app.get('/', async (request, response) => {
     response.status(200).send('hello world')
 })
 
+app.use('/api/login', loginRouter)
 app.use('/api/games', gamesRouter)
 app.use('/api/systems', systemsRouter)
 app.use('/api/users', usersRouter)
