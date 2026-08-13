@@ -15,4 +15,10 @@ usersRouter.get('/:id', (request, response) => {
     })
 })
 
+usersRouter.post('/', (request, response) => {
+    usersRepository.createUser(request.body).then((savedUser) => {
+        response.status(201).json(savedUser)
+    })
+})
+
 export default usersRouter
