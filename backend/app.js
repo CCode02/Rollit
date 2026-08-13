@@ -5,6 +5,7 @@ import logger from './utils/logger.js'
 import config from './utils/config.js'
 import gamesRouter from "./controllers/games.js"
 import systemsRouter from "./controllers/systems.js"
+import usersRouter from "./controllers/users.js"
 
 const app = express()
 
@@ -28,6 +29,7 @@ app.get('/', async (request, response) => {
 
 app.use('/api/games', gamesRouter)
 app.use('/api/systems', systemsRouter)
+app.use('/api/users', usersRouter)
 
 app.use(middleware.unknownEndpoint)
 
