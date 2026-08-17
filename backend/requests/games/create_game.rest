@@ -1,12 +1,8 @@
 POST http://localhost:3003/api/games
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVsbW92aW1pbCIsImlkIjoiNmE3ZTE1MzgyNjIxM2UzYjlkMWU5ZmUyIiwiaWF0IjoxNzg2OTk4OTE1LCJleHAiOjE3ODcwMDI1MTV9.vNPnmQGTnZ5XNwwSegg_ZkmlVTSAQYgxJ7RRRxbIJbY
 
 {
-    "name" : "Partida test",
-    "dungeonMaster" : "6a728e5f154dcc5688e995a8",
-    "players" : [
-        "6a728e5f154dcc5688e995a8", 
-        "6a728e5f154dcc5688e995a8"
-        ],
-    "system" : "6a728e5f154dcc5688e995a8"
+    "name" : "Hellfire Club",
+    "system" : "6a7b8b42f5b8de71304a586f"
 }

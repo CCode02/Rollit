@@ -1,5 +1,8 @@
 import express from 'express'
+import jwt from "jsonwebtoken"
 import gamesRepository from "../repository/gamesRepository.js"
+import usersRepository from "../repository/usersRepository.js"
+import { getTokenFrom } from "../utils/requestProcessing.js"
 
 const gamesRouter = express.Router()
 
@@ -16,8 +19,26 @@ gamesRouter.get('/:id', (request, response) => {
 })
 
 gamesRouter.post('/', (request, response) => {
-    gamesRepository.createGame(request.body).then((savedGame) => {
-        response.status(201).json(savedGame)
+    const body = request.body
+    const decodedToken = jwt.verify(getTokenFrom(request), process.env.SECRET)
+
+    if (!decodedToken.id) {
+        return response.status(401).json({ error: 'token invalid' })
+    }
+
+    usersRepository.getUserById(decodedToken.id).then((user) => {
+        const game = {
+            name: body.name,
+            dungeonMaster: user._id,
+            players: [],
+            system: body.system
+        }
+        gamesRepository.createGame(game).then((savedGame) => {
+            user.gamesDM = user.gamesDM.concat(savedGame._id)
+            usersRepository.updateUser(user.id, user).then((updatedUser) => {
+                response.status(201).json(savedGame)
+            })
+        })
     })
 })
 
